@@ -98,26 +98,6 @@ nav {
     color: #f39c12;
 }
 
-.fas fa-phone{
-    color: inherit;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.fas fa-phone:hover{
-    color: #FF6600;
-}
-
-.fas fa-envelope{
-      color: inherit;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.fas fa-envelope:hover{
-    color: #FF6600;
-}
-
 .burger {
     color: white;
     font-size: 1.5rem;
@@ -261,6 +241,13 @@ nav {
     color: #f39c12;
     width: 20px;
     text-align: center;
+      color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-info:hover{
+    color: #FF6600;
 }
 
 .social-links {
