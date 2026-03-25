@@ -1,0 +1,112 @@
+/* Дополнительные стили для страницы тренеров */
+.trainer-card {
+    position: relative;
+    border: 1px solid #e0e0e0;
+}
+
+.trainer-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: #f39c12;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.trainer-rating {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    color: #f1c40f;
+}
+
+.trainer-rating i {
+    margin-right: 5px;
+}
+
+.trainer-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 15px 0;
+}
+
+.skill-tag {
+    background-color: #e0f7fa;
+    color: #00838f;
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+}
+
+.trainer-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    z-index: 1001;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: white;
+    width: 90%;
+    max-width: 800px;
+    border-radius: 10px;
+    overflow: hidden;
+    animation: modalFade 0.3s;
+}
+
+@keyframes modalFade {
+    from {opacity: 0; transform: translateY(-50px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #7f8c8d;
+}
+
+.trainer-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.trainer-gallery img {
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.trainer-gallery img:hover {
+    transform: scale(1.05);
+}
+
+.view-profile-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 8px 20px;
+    background-color: #2c3e50;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.view-profile-btn:hover {
+    background-color: #1a1a2e;
+}

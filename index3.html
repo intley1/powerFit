@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Расписание | PowerFit</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta name="description" content="Краткое описание страници">
+</head>
+<body>
+    <!-- Навигация -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Power<span>Fit</span></div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="index.html#about">О нас</a></li>
+                    <li><a href="index.html#services">Услуги</a></li>
+                    <li><a href="index2.html">Тренеры</a></li>
+                    <li><a href="index3.html" class="active">Расписание</a></li>
+                    <li><a href="index.html#contact">Контакты</a></li>
+                </ul>
+                <div class="burger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Секция расписания -->
+    <section id="schedule" class="section">
+        <div class="container">
+            <h2 class="section-title">Расписание занятий</h2>
+            
+            <div class="schedule-filters">
+                <button class="filter-btn active" data-day="all">Все дни</button>
+                <button class="filter-btn" data-day="monday">Понедельник</button>
+                <button class="filter-btn" data-day="tuesday">Вторник</button>
+                <button class="filter-btn" data-day="wednesday">Среда</button>
+                <button class="filter-btn" data-day="thursday">Четверг</button>
+                <button class="filter-btn" data-day="friday">Пятница</button>
+                <button class="filter-btn" data-day="saturday">Суббота</button>
+                <button class="filter-btn" data-day="sunday">Воскресенье</button>
+            </div>
+
+            <div class="schedule-table">
+                <div class="schedule-header">
+                    <div>Время</div>
+                    <div>Зал</div>
+                    <div>Занятие</div>
+                    <div>Тренер</div>
+                    <div>Запись</div>
+                </div>
+
+                <!-- Понедельник -->
+                <div class="schedule-row" data-day="monday">
+                    <div>09:00 - 10:00</div>
+                    <div>Основной зал</div>
+                    <div>Йога для начинающих</div>
+                    <div>Мария Смирнова</div>
+                    <div><a href="#" class="btn small-btn">Записаться</a></div>
+                </div>
+
+                <div class="schedule-row" data-day="monday">
+                    <div>18:00 - 19:00</div>
+                    <div>TRX зона</div>
+                    <div>Функциональный тренинг</div>
+                    <div>Алексей Петров</div>
+                    <div><a href="#" class="btn small-btn">Записаться</a></div>
+                </div>
+
+                <!-- Вторник -->
+                <div class="schedule-row" data-day="tuesday">
+                    <div>07:00 - 08:00</div>
+                    <div>Кардио зона</div>
+                    <div>Утренний бег</div>
+                    <div>Дмитрий Иванов</div>
+                    <div><a href="#" class="btn small-btn">Записаться</a></div>
+                </div>
+
+                <!-- Среда -->
+                <div class="schedule-row" data-day="wednesday">
+                    <div>19:00 - 20:30</div>
+                    <div>Силовая зона</div>
+                    <div>Пауэрлифтинг</div>
+                    <div>Дмитрий Иванов</div>
+                    <div><a href="#" class="btn small-btn">Записаться</a></div>
+                </div>
+
+                <!-- Четверг -->
+                <div class="schedule-row" data-day="thursday">
+                    <div>10:00 - 11:00</div>
+                    <div>Студия йоги</div>
+                    <div>Хатха-йога</div>
+                    <div>Мария Смирнова</div>
+                    <div><a href="#" class="btn small-btn">Записаться</a></div>
+                </div>
+
+                <!-- Пятница -->
+                <div class="schedule-row" data-day="friday">
+                    <div>17:00 - 18:00</div>
+                    <div>Основной зал</div>
+                    <div>Кроссфит</div>
+                    <div>Алексей Петров</div>
+                    <div><a href="#" class="btn small-btn">Записаться</a></div>
+                </div>
+
+                <!-- Суббота -->
+                <div class="schedule-row" data-day="saturday">
+                    <div>11:00 - 12:30</div>
+                    <div>Студия йоги</div>
+                    <div>Йога для продвинутых</div>
+                    <div>Мария Смирнова</div>
+                    <div><a href="#" class="btn small-btn">Записаться</a></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 PowerFit. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Фильтрация расписания по дням
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelector('.filter-btn.active').classList.remove('active');
+                this.classList.add('active');
+                
+                const day = this.dataset.day;
+                const rows = document.querySelectorAll('.schedule-row');
+                
+                rows.forEach(row => {
+                    if(day === 'all' || row.dataset.day === day) {
+                        row.style.display = 'grid';
+                    } else {
+                        row.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
