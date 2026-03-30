@@ -99,12 +99,13 @@ header {
 
 .highlight {
     cursor: pointer;
-    transition: color 0.2s, text-shadow 0.2s;
+    color: #000000;
+    transition: color 0.3s, text-shadow 0.3s;
 }
 
 .highlight:hover {
-    color: #ff6b35;
-    text-shadow: 0 0 8px rgba(255, 107, 53, 0.5);
+    color: #ff6b00;
+    text-shadow: 0 0 10px rgba(255, 107, 0, 0.8);
 }
 
 .highlight:hover i {
